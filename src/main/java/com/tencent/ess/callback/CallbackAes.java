@@ -111,6 +111,19 @@ public class CallbackAes {
 
     /**
      * 测试
+     * 注：如果解密时报错 Illegal key size
+     * 1、可尝试将jdk升级到到1.8.0_162及以上版本之上
+     *
+     * 2、如果jdk版本为1.8.0_151 或 1.8.0_152，可加入以下代码开启支持：
+     * Security.setProperty("crypto.policy", "unlimited");
+     *
+     * 3、下载以下jar包置于${java.home}/jre/lib/security/
+     * jdk1.6:
+     * http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html
+     * jdk1.7:
+     * http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html
+     * jdk1.8:
+     * http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html
      */
     public static void main(String[] args) throws Exception {
         // 传入CallbackUrlKey
