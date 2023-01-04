@@ -1,6 +1,6 @@
 package com.tencent.ess.byfile;
 
-import com.tencent.ess.api.DescribeFileUrlsApi;
+import com.tencent.ess.api.fileuploaddownload.DescribeFileUrlsApi;
 import com.tencent.ess.api.CreateFlowByFileDirectlyApi;
 import com.tencent.ess.config.Config;
 import com.tencentcloudapi.ess.v20201111.models.ApproverInfo;

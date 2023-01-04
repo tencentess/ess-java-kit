@@ -1,5 +1,8 @@
 package com.tencent.ess.api;
 
+import com.tencent.ess.api.flowmanage.CreateDocumentApi;
+import com.tencent.ess.api.flowmanage.CreateFlowApi;
+import com.tencent.ess.api.flowmanage.CreateSchemeUrlApi;
 import com.tencentcloudapi.ess.v20201111.models.CreateSchemeUrlResponse;
 import com.tencentcloudapi.ess.v20201111.models.FlowCreateApprover;
 

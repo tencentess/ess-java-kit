@@ -1,5 +1,8 @@
 package com.tencent.ess.api;
 
+import com.tencent.ess.api.fileuploaddownload.UploadFilesApi;
+import com.tencent.ess.api.flowmanage.CreateFlowByFilesApi;
+import com.tencent.ess.api.flowmanage.CreateSchemeUrlApi;
 import com.tencentcloudapi.ess.v20201111.models.ApproverInfo;
 import com.tencentcloudapi.ess.v20201111.models.CreateSchemeUrlResponse;
 
