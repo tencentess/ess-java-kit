@@ -1,4 +1,4 @@
-package com.tencent.ess.api;
+package com.tencent.ess.api.flowmanage;
 
 import com.google.gson.Gson;
 import com.tencent.ess.common.Client;

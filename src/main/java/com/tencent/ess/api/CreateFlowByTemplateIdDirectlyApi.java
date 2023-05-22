@@ -6,6 +6,8 @@ import com.tencent.ess.api.flowmanage.CreateSchemeUrlApi;
 import com.tencentcloudapi.ess.v20201111.models.CreateSchemeUrlResponse;
 import com.tencentcloudapi.ess.v20201111.models.FlowCreateApprover;
 
+import static com.tencent.ess.api.flowmanage.StartFlowApi.StartFlow;
+
 /**
  * 通过模板发起签署流程，并查询签署链接
  */
@@ -33,7 +35,7 @@ public class CreateFlowByTemplateIdDirectlyApi {
         Thread.sleep(3000);
 
         // 4、开启流程
-        StartFlowApi.StartFlow(operatorId, flowId);
+        StartFlow(operatorId, flowId);
 
         // 5、获取签署链接
         CreateSchemeUrlResponse response = CreateSchemeUrlApi.CreateSchemeUrl(operatorId, flowId);

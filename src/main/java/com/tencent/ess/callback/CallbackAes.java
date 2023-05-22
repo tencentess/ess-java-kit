@@ -7,7 +7,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 /**
- * 功能描述：
  * 回调数据加解密
  */
 public class CallbackAes {
