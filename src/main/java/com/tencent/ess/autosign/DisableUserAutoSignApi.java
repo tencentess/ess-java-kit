@@ -4,7 +4,6 @@ import com.tencent.ess.common.Client;
 import com.tencent.ess.config.Config;
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 import com.tencentcloudapi.ess.v20201111.EssClient;
-import com.tencentcloudapi.ess.v20201111.models.CreateUserAutoSignEnableUrlResponse;
 import com.tencentcloudapi.ess.v20201111.models.DisableUserAutoSignRequest;
 import com.tencentcloudapi.ess.v20201111.models.DisableUserAutoSignResponse;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
