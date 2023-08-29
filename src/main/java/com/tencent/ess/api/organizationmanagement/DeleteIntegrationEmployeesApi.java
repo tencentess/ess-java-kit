@@ -7,21 +7,8 @@ import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 import com.tencentcloudapi.ess.v20201111.EssClient;
 import com.tencentcloudapi.ess.v20201111.models.*;
 
-/**
- * 移除员工
- *
- * 官网文档：https://cloud.tencent.com/document/product/1323/81116
- *
- * 移除员工
- */
 public class DeleteIntegrationEmployeesApi {
-    /**
-     * 移除员工
-     *
-     * @param operatorId 经办人id
-     * @param employees  待移除员工的信息，userId和openId二选一，必填一个
-     * @return DeleteIntegrationEmployeesResponse
-     */
+
     public static DeleteIntegrationEmployeesResponse DeleteIntegrationEmployees(String operatorId, Staff[] employees) throws TencentCloudSDKException {
         // 构造默认的api客户端调用实例
         EssClient client = Client.getEssClient();
@@ -34,7 +21,6 @@ public class DeleteIntegrationEmployeesApi {
         userInfo.setUserId(operatorId);
         request.setOperator(userInfo);
 
-        // 待移除员工的信息，userId和openId二选一，必填一个
         request.setEmployees(employees);
 
         return client.DeleteIntegrationEmployees(request);

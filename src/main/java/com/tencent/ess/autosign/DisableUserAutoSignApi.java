@@ -8,13 +8,6 @@ import com.tencentcloudapi.ess.v20201111.models.DisableUserAutoSignRequest;
 import com.tencentcloudapi.ess.v20201111.models.DisableUserAutoSignResponse;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 关闭个人自动签功能
- *
- * 文档地址：https://qian.tencent.com/developers/companyApis/users/DisableUserAutoSign
- *
- * 企业方可以通过此接口关闭个人的自动签功能（处方单场景专用，使用此接口请与客户经理确认）
- */
 public class DisableUserAutoSignApi {
 
     public static void main(String[] args) {

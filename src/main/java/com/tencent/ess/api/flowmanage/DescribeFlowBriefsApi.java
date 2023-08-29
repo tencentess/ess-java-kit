@@ -9,21 +9,8 @@ import com.tencentcloudapi.ess.v20201111.models.DescribeFlowBriefsRequest;
 import com.tencentcloudapi.ess.v20201111.models.DescribeFlowBriefsResponse;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 查询流程摘要.
- *
- * 官网文档：https://cloud.tencent.com/document/product/1323/70358
- *
- * 适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。
- */
 public class DescribeFlowBriefsApi {
-    /**
-     * 查询流程摘要
-     *
-     * @param operatorId 经办人id
-     * @param flowId     流程id
-     * @return DescribeFlowBriefsResponse
-     */
+
     public static DescribeFlowBriefsResponse DescribeFlowBriefs(String operatorId, String flowId) throws TencentCloudSDKException {
         // 构造默认的api客户端调用实例
         EssClient client = Client.getEssClient();
@@ -36,7 +23,6 @@ public class DescribeFlowBriefsApi {
         userInfo.setUserId(operatorId);
         request.setOperator(userInfo);
 
-        // 需要查询的流程ID列表
         request.setFlowIds(new String[]{flowId});
 
         return client.DescribeFlowBriefs(request);

@@ -7,18 +7,8 @@ import com.tencentcloudapi.ess.v20201111.EssClient;
 import com.tencentcloudapi.ess.v20201111.models.DescribeThirdPartyAuthCodeRequest;
 import com.tencentcloudapi.ess.v20201111.models.DescribeThirdPartyAuthCodeResponse;
 
-/**
- * 通过AuthCode查询用户是否实名
- *
- * 官网文档：https://cloud.tencent.com/document/product/1323/70368
- */
 public class DescribeThirdPartyAuthCodeApi {
-    /**
-     * 通过AuthCode查询用户是否实名
-     *
-     * @param authCode 电子签小程序跳转客户小程序时携带的授权查看码
-     * @return DescribeThirdPartyAuthCodeResponse
-     */
+
     public static DescribeThirdPartyAuthCodeResponse describeThirdPartyAuthCode(String authCode)
             throws TencentCloudSDKException {
 

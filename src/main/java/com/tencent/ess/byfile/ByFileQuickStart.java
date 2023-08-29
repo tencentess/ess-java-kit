@@ -57,21 +57,13 @@ public class ByFileQuickStart {
         // 签署参与者信息
         // 个人签署方
         ApproverInfo approverInfo = new ApproverInfo();
-        // 0：企业
-        // 1：个人
-        // 3：企业静默签署
-        // 注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
         approverInfo.setApproverType(1L);
-        // 本环节需要操作人的名字
         approverInfo.setApproverName(name);
-        // 本环节需要操作人的手机号
         approverInfo.setApproverMobile(mobile);
-        // sms--短信，none--不通知
         approverInfo.setNotifyType("sms");
         // 签署人对应的签署控件
         Component component = BuildComponent("SIGN_SIGNATURE", "", 417.15625F, 497.671875F, 74F, 70F, 0L, 1L);
 
-        // 本环节操作人签署控件配置，为企业静默签署时，只允许类型为SIGN_SEAL（印章）和SIGN_DATE（日期）控件，并且传入印章编号
         approverInfo.setSignComponents(new Component[]{component});
 
         return new ApproverInfo[]{approverInfo};
@@ -83,23 +75,14 @@ public class ByFileQuickStart {
         // 签署参与者信息
         // 企业签署方
         ApproverInfo organizationApprover = new ApproverInfo();
-        // 0：企业
-        // 1：个人
-        // 3：企业静默签署
-        // 注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
         organizationApprover.setApproverType(0L);
-        // 本环节需要企业操作人的企业名称
         organizationApprover.setOrganizationName(organizationName);
-        // 本环节需要操作人的名字
         organizationApprover.setApproverName(name);
-        // 本环节需要操作人的手机号
         organizationApprover.setApproverMobile(mobile);
-        // sms--短信，none--不通知
         organizationApprover.setNotifyType("none");
-        // 签署人对应的签署控件
+
         Component component = BuildComponent("SIGN_SEAL", "", 120F, 120F, 74F, 70F, 0L, 1L);
 
-        // 本环节操作人签署控件配置，为企业静默签署时，只允许类型为SIGN_SEAL（印章）和SIGN_DATE（日期）控件，并且传入印章编号
         organizationApprover.setSignComponents(new Component[]{component});
         return new ApproverInfo[]{organizationApprover};
     }
@@ -109,15 +92,10 @@ public class ByFileQuickStart {
         // 签署参与者信息
         // 企业签署方
         ApproverInfo serverSignApprover = new ApproverInfo();
-        // 0：企业
-        // 1：个人
-        // 3：企业静默签署
-        // 注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
         serverSignApprover.setApproverType(3L);
-        // 签署人对应的签署控件
+
         Component component = BuildComponent("SIGN_SEAL", serverSignSealId, 200F, 200F, 74F, 70F, 0L, 1L);
 
-        // 本环节操作人签署控件配置，为企业静默签署时，只允许类型为SIGN_SEAL（印章）和SIGN_DATE（日期）控件，并且传入印章编号
         serverSignApprover.setSignComponents(new Component[]{component});
         return new ApproverInfo[]{serverSignApprover};
     }
@@ -161,19 +139,6 @@ public class ByFileQuickStart {
 
     /**
      * 构建控件信息
-     *
-     * @param componentType   控件类型，对于签署控件，具体类型如下
-     *                        SIGN_SEAL - 签署印章控件
-     *                        SIGN_DATE - 签署日期控件
-     *                        SIGN_SIGNATURE - 手写签名控件
-     * @param componentValue  控件内容
-     * @param componentPosX   控件水平方向坐标X位置，单位pt
-     * @param componentPosY   控件垂直方向坐标Y位置，单位pt
-     * @param componentWidth  控件宽度，单位pt
-     * @param componentHeight 件高度，单位pt
-     * @param fileIndex       所属文件的序号（取值为：0-N）
-     * @param componentPage   控件所在页码，取值为：1-N
-     * @return 控件
      */
     public static Component BuildComponent(String componentType, String componentValue,
                                            float componentPosX, float componentPosY, float componentWidth, float componentHeight, long fileIndex, long componentPage) {
@@ -181,28 +146,13 @@ public class ByFileQuickStart {
         // 签署人对应的签署控件
         Component component = new Component();
 
-        // 如果是 Component 控件类型，则可选类型为：
-        // TEXT - 内容文本控件
-        // DATE - 内容日期控件
-        // CHECK_BOX - 勾选框控件
-        // 如果是 SignComponent 控件类型，则可选类型为：
-        // SIGN_SEAL - 签署印章控件
-        // SIGN_DATE - 签署日期控件
-        // SIGN_SIGNATURE - 手写签名控件
         component.setComponentType(componentType);
-        // 控件Value
         component.setComponentValue(componentValue);
-        // 参数控件X位置，单位pt
         component.setComponentPosX(componentPosX);
-        // 参数控件Y位置，单位pt
         component.setComponentPosY(componentPosY);
-        // 参数控件宽度，单位pt
         component.setComponentWidth(componentWidth);
-        // 参数控件高度，单位pt
         component.setComponentHeight(componentHeight);
-        // 控件所属文件的序号（取值为：0-N）
         component.setFileIndex(fileIndex);
-        // 参数控件所在页码，取值为：1-N
         component.setComponentPage(componentPage);
 
         return component;

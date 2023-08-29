@@ -6,19 +6,12 @@ import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 import com.tencentcloudapi.ess.v20201111.EssClient;
 import com.tencentcloudapi.ess.v20201111.models.*;
 
-/**
- * 创建导入处方单个人印章
- * <p>
- * 文档地址：https://qian.tencent.com/developers/companyApis/seals/CreatePreparedPersonalEsign
- * <p>
- * KA医生可以通过此接口导入处方单个人印章（处方单场景专用，使用此接口请与客户经理确认）
- */
 public class CreatePreparedPersonalEsign {
 
     public static void main(String[] args) {
         CreatePreparedPersonalEsignRequest req = prepareCreatePreparedPersonalEsignRequest();
         // 身份证号码
-        req.setIdCardNumber("110120200010221234");
+        req.setIdCardNumber("110*************234");
         req.setIdCardType("ID_CARD");
         req.setUserName("用户的名称");
         req.setSealName("印章的名称");

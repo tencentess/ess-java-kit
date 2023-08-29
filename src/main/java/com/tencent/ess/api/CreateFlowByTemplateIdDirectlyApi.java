@@ -12,19 +12,11 @@ import static com.tencent.ess.api.flowmanage.StartFlowApi.StartFlow;
  * 通过模板发起签署流程，并查询签署链接
  */
 public class CreateFlowByTemplateIdDirectlyApi {
-    /**
-     * 通过模板发起签署流程，并查询签署链接
-     *
-     * @param operatorId 经办人id
-     * @param templateId 模板id
-     * @param flowName   流程名
-     * @param approvers  FlowCreateApprover[]
-     * @return flowId、文件url组成的字符串数组
-     */
     public static String[] CreateFlowByTemplateIdDirectly(String operatorId, String templateId,
-                                                          String flowName, FlowCreateApprover[] approvers) throws Exception {
+                                                          String flowName, FlowCreateApprover[] approvers,
+                                                          boolean isAutoSign) throws Exception {
         // 1、创建流程
-        String flowId = CreateFlowApi.CreateFlow(operatorId, flowName, approvers);
+        String flowId = CreateFlowApi.CreateFlow(operatorId, flowName, approvers, isAutoSign);
 
         // 2、创建电子文档
         // --- 注意 formFields 与模板保持一样  CreateDocument.packFormFieldsExample()

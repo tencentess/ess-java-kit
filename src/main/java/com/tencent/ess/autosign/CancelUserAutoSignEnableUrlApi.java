@@ -9,13 +9,6 @@ import com.tencentcloudapi.ess.v20201111.models.CancelUserAutoSignEnableUrlRespo
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 import com.tencentcloudapi.ess.v20201111.models.UserThreeFactor;
 
-/**
- * 撤销自动签开通链接
- * <p>
- * 文档地址：https://qian.tencent.com/developers/companyApis/users/CancelUserAutoSignEnableUrl
- * <p>
- * 企业方可以通过此接口来撤销发送给个人用户的自动签开通链接，撤销后对应的个人用户开通链接失效。若个人用户已经完成开通，将无法撤销。（处方单场景专用，使用此接口请与客户经理确认）
- */
 public class CancelUserAutoSignEnableUrlApi {
 
     public static final String sceneKey = "E_PRESCRIPTION_AUTO_SIGN";

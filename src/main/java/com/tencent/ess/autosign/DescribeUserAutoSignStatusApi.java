@@ -8,14 +8,6 @@ import com.tencentcloudapi.ess.v20201111.models.DescribeUserAutoSignStatusReques
 import com.tencentcloudapi.ess.v20201111.models.DescribeUserAutoSignStatusResponse;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 查询个人用户开通自动签状态
- *
- * 文档地址：https://qian.tencent.com/developers/companyApis/users/DescribeUserAutoSignStatus
- *
- * 企业方可以通过此接口查询个人用户自动签开启状态。（处方单场景专用，使用此接口请与客户经理确认）
- *
- */
 public class DescribeUserAutoSignStatusApi {
 
     public static void main(String[] args) {

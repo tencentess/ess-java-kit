@@ -9,21 +9,9 @@ import com.tencentcloudapi.ess.v20201111.models.GetTaskResultApiRequest;
 import com.tencentcloudapi.ess.v20201111.models.GetTaskResultApiResponse;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 查询转换任务状态
- * <p>
- * 官网文档：https://cloud.tencent.com/document/product/1323/78148
- * <p>
- * 查询转换任务状态
- */
 public class GetTaskResultApi {
-    /**
-     * 查询转换任务状态
-     *
-     * @param taskId 任务Id，通过CreateConvertTaskApi得到
-     * @return GetTaskResultApiResponse
-     */
-    public static GetTaskResultApiResponse GetTaskResultApi(String operatorId, String taskId)
+
+    public static GetTaskResultApiResponse GetTaskResult(String operatorId, String taskId)
             throws TencentCloudSDKException {
         // 构造默认的api客户端调用实例
         EssClient client = com.tencent.ess.common.Client.getEssClient();
@@ -36,7 +24,6 @@ public class GetTaskResultApi {
         userInfo.setUserId(operatorId);
         request.setOperator(userInfo);
 
-        // 任务Id，通过CreateConvertTaskApi得到
         request.setTaskId(taskId);
 
         return client.GetTaskResultApi(request);
@@ -51,7 +38,7 @@ public class GetTaskResultApi {
             // 任务Id，通过CreateConvertTaskApi得到
             String taskId = "****************";
 
-            GetTaskResultApiResponse response = GetTaskResultApi.GetTaskResultApi(Config.OperatorUserId, taskId);
+            GetTaskResultApiResponse response = GetTaskResultApi.GetTaskResult(Config.OperatorUserId, taskId);
 
             System.out.println(new Gson().toJson(response));
         } catch (Exception e) {

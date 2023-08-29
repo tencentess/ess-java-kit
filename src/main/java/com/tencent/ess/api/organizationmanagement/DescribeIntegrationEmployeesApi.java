@@ -10,23 +10,8 @@ import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 import com.tencentcloudapi.ess.v20201111.models.DescribeIntegrationEmployeesRequest;
 import com.tencentcloudapi.ess.v20201111.models.DescribeIntegrationEmployeesResponse;
 
-/**
- * 查询员工信息
- *
- * 官网文档：https://cloud.tencent.com/document/product/1323/81115
- *
- * 查询员工信息，每次返回的数据量最大为20
- */
 public class DescribeIntegrationEmployeesApi {
-    /**
-     * 查询员工信息
-     *
-     * @param operatorId 经办人id
-     * @param limit      返回最大数量，最大为20
-     * @param offset     偏移量，默认为0，最大为20000
-     * @param filters    查询过滤实名用户，key为Status，Values为["IsVerified"]
-     * @return DescribeIntegrationEmployeesResponse
-     */
+
     public static DescribeIntegrationEmployeesResponse DescribeIntegrationEmployees(String operatorId, long limit, long offset, Filter[] filters) throws TencentCloudSDKException {
         // 构造默认的api客户端调用实例
         EssClient client = Client.getEssClient();
@@ -39,13 +24,10 @@ public class DescribeIntegrationEmployeesApi {
         userInfo.setUserId(operatorId);
         request.setOperator(userInfo);
 
-        //	查询过滤实名用户，key为Status，Values为["IsVerified"]
         request.setFilters(filters);
 
-        // 返回最大数量，最大为20
         request.setLimit(limit);
 
-        // 偏移量，默认为0，最大为20000
         request.setOffset(offset);
 
         return client.DescribeIntegrationEmployees(request);

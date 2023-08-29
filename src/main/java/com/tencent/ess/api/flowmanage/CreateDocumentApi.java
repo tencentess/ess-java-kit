@@ -10,25 +10,8 @@ import com.tencentcloudapi.ess.v20201111.models.CreateDocumentResponse;
 import com.tencentcloudapi.ess.v20201111.models.FormField;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 创建电子文档
- * <p>
- * 官方文档：https://cloud.tencent.com/document/api/1323/70364
- * <p>
- * 适用场景：见创建签署流程接口。
- * 注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。是“发起流程”接口的前置接口。
- */
 public class CreateDocumentApi {
-    /**
-     * 创建电子文档   --请注意设置flowId参与者、FormField与模板保持一致
-     *
-     * @param operatorId 经办人id
-     * @param flowId     流程id
-     * @param templateId 单个个人签署模版
-     * @param fileName   单个文件名,最大长度200个字符
-     * @param formFields 设置发起人填写控件
-     * @return CreateDocumentResponse
-     */
+
     public static CreateDocumentResponse CreateDocument(String operatorId, String flowId, String templateId, String fileName,
                                                         FormField[] formFields)
             throws TencentCloudSDKException {
@@ -42,14 +25,8 @@ public class CreateDocumentApi {
         userInfo.setUserId(operatorId);
         request.setOperator(userInfo);
 
-        // 流程id
         request.setFlowId(flowId);
-
-        // 用户上传的模板ID,在控制台模版管理中可以找到
-        // 单个个人签署模版
         request.setTemplateId(templateId);
-
-        // 文件名列表,单个文件名最大长度200个字符
         String[] fileNames = new String[]{fileName};
         request.setFileNames(fileNames);
 

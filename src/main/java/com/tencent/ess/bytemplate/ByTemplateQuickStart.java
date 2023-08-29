@@ -32,7 +32,7 @@ public class ByTemplateQuickStart {
         // Step 2
         // 使用文件发起合同
         // 发起合同
-        String[] resp = CreateFlowByTemplateIdDirectlyApi.CreateFlowByTemplateIdDirectly(operatorId, templateId, flowName, approvers);
+        String[] resp = CreateFlowByTemplateIdDirectlyApi.CreateFlowByTemplateIdDirectly(operatorId, templateId, flowName, approvers, false);
         System.out.println("您创建的合同id为: ");
         System.out.println(resp[0]);
         // 返回签署的链接
@@ -53,16 +53,9 @@ public class ByTemplateQuickStart {
         // 签署参与者信息
         // 个人签署方
         FlowCreateApprover approverInfo = new FlowCreateApprover();
-        // 0：企业
-        // 1：个人
-        // 3：企业静默签署
-        // 注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
         approverInfo.setApproverType(1L);
-        // 本环节需要操作人的名字
         approverInfo.setApproverName(name);
-        // 本环节需要操作人的手机号
         approverInfo.setApproverMobile(mobile);
-        // sms--短信，none--不通知
         approverInfo.setNotifyType("sms");
 
         return new FlowCreateApprover[]{approverInfo};
@@ -74,18 +67,10 @@ public class ByTemplateQuickStart {
         // 签署参与者信息
         // 企业签署方
         FlowCreateApprover organizationApprover = new FlowCreateApprover();
-        // 0：企业
-        // 1：个人
-        // 3：企业静默签署
-        // 注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
         organizationApprover.setApproverType(0L);
-        // 本环节需要企业操作人的企业名称
         organizationApprover.setOrganizationName(organizationName);
-        // 本环节需要操作人的名字
         organizationApprover.setApproverName(name);
-        // 本环节需要操作人的手机号
         organizationApprover.setApproverMobile(mobile);
-        // sms--短信，none--不通知
         organizationApprover.setNotifyType("none");
 
         return new FlowCreateApprover[]{organizationApprover};
@@ -96,10 +81,7 @@ public class ByTemplateQuickStart {
         // 签署参与者信息
         // 企业签署方
         FlowCreateApprover serverSignApprover = new FlowCreateApprover();
-        // 0：企业
-        // 1：个人
-        // 3：企业静默签署
-        // 注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
+
         serverSignApprover.setApproverType(3L);
 
         return new FlowCreateApprover[]{serverSignApprover};

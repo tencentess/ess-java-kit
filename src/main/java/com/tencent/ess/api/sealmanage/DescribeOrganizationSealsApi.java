@@ -9,21 +9,8 @@ import com.tencentcloudapi.ess.v20201111.models.DescribeOrganizationSealsRequest
 import com.tencentcloudapi.ess.v20201111.models.DescribeOrganizationSealsResponse;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 查询企业电子印章
- * <p>
- * 官网文档：https://cloud.tencent.com/document/product/1323/82453
- * <p>
- * 查询企业印章的列表，需要操作者具有查询印章权限
- */
 public class DescribeOrganizationSealsApi {
-    /**
-     * 查询企业电子印章
-     *
-     * @param operatorId 经办人id
-     * @param limit      返回最大数量，最大为100
-     * @return DescribeOrganizationSealsResponse
-     */
+
     public static DescribeOrganizationSealsResponse DescribeOrganizationSeals(String operatorId, long limit) throws TencentCloudSDKException {
         // 构造默认的api客户端调用实例
         EssClient client = Client.getEssClient();

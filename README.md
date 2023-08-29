@@ -71,19 +71,11 @@ api目录是对电子签企业版所有API的简单封装，以及调用的Examp
 
 对使用文件和模板发起合同的封装：
 
-**ByFileQuickStart一键使用文件发起流程：**
-+ 上传文件获取fileId
-+ 创建签署流程
-+ 获取签署链接
+**ByFileQuickStart一键使用文件发起流程：上传文件获取fileId -> 创建签署流程 -> 获取签署链接**
 
-**ByTemplateQuickStart一键使用模板id发起流程:**
-+ 创建流程
-+ 创建电子文档
-+ 等待文档异步合成
-+ 开启流程
-+ 获取签署链接
+**ByTemplateQuickStart一键使用模板id发起流程:创建流程 -> 创建电子文档 -> 等待文档异步合成 -> 开启流程 -> 获取签署链接**
 
-注意部分参数需要用户结合实际业务进行调整
+注意部分参数可能与用户配置的不一致，需要调整
 
 ### com.tencent.ess.byfile
 byfile目录是电子签企业版的核心场景之一：通过文件发起的快速上手样例。
@@ -107,4 +99,4 @@ callback目录是电子签企业版对接的回调解密部分。
 blank.pdf是一个空白的pdf用于快速发起合同的测试。
 
 ## 电子签企业版官网入口
-[腾讯电子签企业版](https://cloud.tencent.com/document/product/1323)
+[腾讯电子签开发者中心](https://qian.tencent.com/developers/company/overview)

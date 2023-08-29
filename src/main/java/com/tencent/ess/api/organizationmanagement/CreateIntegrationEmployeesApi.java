@@ -10,21 +10,8 @@ import com.tencentcloudapi.ess.v20201111.models.CreateIntegrationEmployeesRespon
 import com.tencentcloudapi.ess.v20201111.models.Staff;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 创建员工
- *
- * 官网文档：https://cloud.tencent.com/document/product/1323/81117
- *
- * 创建员工
- */
 public class CreateIntegrationEmployeesApi {
-    /**
-     * 创建员工
-     *
-     * @param operatorId 经办人id
-     * @param employees  待移除员工的信息，userId和openId二选一，必填一个
-     * @return CreateIntegrationEmployeesResponse
-     */
+
     public static CreateIntegrationEmployeesResponse CreateIntegrationEmployees(String operatorId, Staff[] employees) throws TencentCloudSDKException {
         // 构造默认的api客户端调用实例
         EssClient client = Client.getEssClient();
@@ -37,7 +24,6 @@ public class CreateIntegrationEmployeesApi {
         userInfo.setUserId(operatorId);
         request.setOperator(userInfo);
 
-        // 待创建员工的信息，Mobile和DisplayName必填
         request.setEmployees(employees);
 
         return client.CreateIntegrationEmployees(request);

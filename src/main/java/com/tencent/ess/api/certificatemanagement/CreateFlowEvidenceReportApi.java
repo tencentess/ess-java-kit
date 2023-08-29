@@ -8,19 +8,8 @@ import com.tencentcloudapi.ess.v20201111.models.CreateFlowEvidenceReportRequest;
 import com.tencentcloudapi.ess.v20201111.models.CreateFlowEvidenceReportResponse;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 创建并返回出证报告
- *
- * 官网文档：https://cloud.tencent.com/document/product/1323/79686
- *
- * 创建出证报告，返回报告 ID。
- */
 public class CreateFlowEvidenceReportApi {
-    /**
-     * 创建并返回出证报告
-     *
-     * @param flowId 签署流程编号
-     */
+
     public static CreateFlowEvidenceReportResponse CreateFlowEvidenceReport(String operatorId, String flowId)
             throws Exception {
 

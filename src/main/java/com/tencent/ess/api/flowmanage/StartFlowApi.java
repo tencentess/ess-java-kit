@@ -9,18 +9,8 @@ import com.tencentcloudapi.ess.v20201111.models.StartFlowRequest;
 import com.tencentcloudapi.ess.v20201111.models.StartFlowResponse;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 此接口用于发起流程
- * 适用场景：见创建签署流程接口。
- * 注：该接口是“创建电子文档”接口的后置接口，用于激活包含完整合同信息（模板及内容信息）的流程。激活后的流程就是一份待签署的电子合同。
- */
 public class StartFlowApi {
-    /**
-     * 发起流程
-     * @param operatorId 经办人id
-     * @param flowId     流程id
-     * @return StartFlowResponse
-     */
+
     public static StartFlowResponse StartFlow(String operatorId, String flowId) throws TencentCloudSDKException {
         // 构造默认的api客户端调用实例
         EssClient client = Client.getEssClient();

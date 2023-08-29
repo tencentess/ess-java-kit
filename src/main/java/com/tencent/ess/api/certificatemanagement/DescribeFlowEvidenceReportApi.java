@@ -8,19 +8,8 @@ import com.tencentcloudapi.ess.v20201111.models.DescribeFlowEvidenceReportReques
 import com.tencentcloudapi.ess.v20201111.models.DescribeFlowEvidenceReportResponse;
 import com.tencentcloudapi.ess.v20201111.models.UserInfo;
 
-/**
- * 查询出证报告
- *
- * 官网文档：https://cloud.tencent.com/document/product/1323/83441
- *
- * 查询出证报告，返回报告 URL。
- */
 public class DescribeFlowEvidenceReportApi {
-    /**
-     * 查询出证报告
-     *
-     * @param reportId 出证报告编号
-     */
+
     public static DescribeFlowEvidenceReportResponse DescribeFlowEvidenceReport(String operatorId, String reportId)
             throws Exception {
 
