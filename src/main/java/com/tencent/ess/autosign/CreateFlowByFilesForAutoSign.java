@@ -10,10 +10,9 @@ import com.tencentcloudapi.ess.v20201111.EssClient;
 import com.tencentcloudapi.ess.v20201111.models.*;
 
 
-
 /**
  * 使用文件发起合同QuickStart 医疗自动签专用 B2CC
- *
+ * <p>
  * 关键字定位签署坐标（请根据实际PDF中的文件调整关键字）
  */
 public class CreateFlowByFilesForAutoSign {
@@ -46,7 +45,11 @@ public class CreateFlowByFilesForAutoSign {
                 personApproverMobileForMedical, idCardNumberForMedical,
                 "药师", 20F, -30F, 100F, 100L);
 
-        ApproverInfo[] allApprovers = new ApproverInfo[]{approversForDoctor, approversForMedical};
+        // 平台企业信息
+        ApproverInfo approverForPlatform = BuildServerSignApprover("中药处方",
+                20F, -30F, 100F, 100L);
+
+        ApproverInfo[] allApprovers = new ApproverInfo[]{approverForPlatform, approversForDoctor, approversForMedical};
 
         // Step 2
         // 使用文件发起合同
@@ -126,7 +129,7 @@ public class CreateFlowByFilesForAutoSign {
         approverInfo.setApproverIdCardType("ID_CARD");
         approverInfo.setApproverIdCardNumber(idCardNum);
 
-        Component component = BuildKeyWordComponent(keyWord, "Right", offSetX, offsetY, width, height);
+        Component component = BuildKeyWordComponent(keyWord, "Right", offSetX, offsetY, width, height, "", "");
 
         approverInfo.setSignComponents(new Component[]{component});
         return approverInfo;
@@ -134,7 +137,7 @@ public class CreateFlowByFilesForAutoSign {
 
     public static Component BuildKeyWordComponent(String componentId,  String relativeLocation,
                                                   float offSetX, float offSetY, float componentWidth,
-                                                  float componentHeight) {
+                                                  float componentHeight, String componentType, String componentValue) {
         // 模板控件信息
         // 签署人对应的签署控件
         Component component = new Component();
@@ -159,7 +162,25 @@ public class CreateFlowByFilesForAutoSign {
         component.setOffsetY(offSetY);
 
         component.setRelativeLocation(relativeLocation);
+        if (!componentType.isEmpty()) {
+            component.setComponentType(componentType);
+        }
+
+        if (!componentValue.isEmpty()) {
+            component.setComponentValue(componentValue);
+        }
 
         return component;
+    }
+
+
+    private static ApproverInfo BuildServerSignApprover(String keyWord, float offSetX, float offsetY,
+                                                        float width, float height) {
+        ApproverInfo approverInfo = new ApproverInfo();
+        approverInfo.setApproverType(3L);
+        Component component = BuildKeyWordComponent(keyWord, "Right", offSetX, offsetY,
+                width, height, "SIGN_SEAL", Config.ServerSignSealId);
+        approverInfo.setSignComponents(new Component[]{component});
+        return approverInfo;
     }
 }
