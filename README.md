@@ -9,7 +9,7 @@
     <!-- 请到https://search.maven.org/search?q=tencentcloud-sdk-java查询所有版本 -->
     <groupId>com.tencentcloudapi</groupId>
     <artifactId>tencentcloud-sdk-java-ess</artifactId>
-    <version>3.1.528</version>
+    <version>3.1.1173</version>
 </dependency>
 ```
 
@@ -60,7 +60,7 @@ export PATH=${PATH}:${MAVEN_HOME}/bin
     <!-- 请到https://search.maven.org/search?q=tencentcloud-sdk-java查询所有版本 -->
     <groupId>com.tencentcloudapi</groupId>
     <artifactId>tencentcloud-sdk-java-ess</artifactId>
-    <version>3.1.528</version>
+    <version>3.1.1173</version>
 </dependency>
 ```
 
